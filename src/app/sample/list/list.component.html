@@ -1,0 +1,49 @@
+<h4>Users list</h4>
+
+<!-- <div class="row">
+    <div class="col-md-4">
+        <input *ngIf="config.filtering" placeholder="Filter all columns" [ngTableFiltering]="config.filtering" class="form-control" (tableChanged)="onChangeTable(config)" />
+    </div>
+</div>
+<br>
+
+<ng-table id="sampleTable" [config]="config" (tableChanged)="onChangeTable(config)" (cellClicked)="onCellClick($event)" [rows]="rowData" [columns]="columns">
+
+</ng-table>
+
+<pagination *ngIf="config.paging" class="pagination-sm" [(ngModel)]="page" [totalItems]="length" [itemsPerPage]="itemsPerPage" [maxSize]="maxSize" [boundaryLinks]="true" [rotate]="false" (pageChanged)="onChangeTable(config, $event)" (numPages)="numPages = $event">
+</pagination>
+<pre *ngIf="config.paging" class="card card-block card-header">Page: {{page}} / {{numPages}}</pre>
+
+<hr>
+<hr>
+<hr>
+<hr> -->
+
+
+<div class="table-responsive">
+    <p-table [value]="fullData" [paginator]="true" [rows]="5" [autoLayout]="true">
+        <ng-template pTemplate="header">
+            <tr>
+                <th *ngFor="let col of columns_prime" [pSortableColumn]="col.field">
+                    {{col.header}}
+                    <p-sortIcon [field]="col.field"></p-sortIcon>
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-user>
+            <tr>
+                <th *ngFor="let col of columns_prime">
+                    {{user[col.header]}}
+                </th>
+            </tr>
+        </ng-template>
+        <!-- <ng-template pTemplate="paginatorleft" let-state>
+            {{state.first}}
+            <button type="button" pButton icon="fa-step-backwards"></button>
+        </ng-template>
+        <ng-template pTemplate="paginatorright">
+            <button type="button" pButton icon="fa-cloud-upload"></button>
+        </ng-template> -->
+    </p-table>
+</div>

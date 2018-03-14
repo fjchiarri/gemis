@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+    <a class="navbar-brand">
+        <img height="30" alt="Angular Logo" src="../../../assets/gemis-logo.png">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                <a class="nav-link">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+            <li class="nav-item dropdown" ngbDropdown routerLinkActive="active">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>Sample</a>
+                <div class="dropdown-menu" ngbDropdownMenu>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item" routerLinkActive="active"><a class="dropdown-item" routerLink="/sample/list" class="nav-link">List</a></li>
+                        <li class="nav-item" routerLinkActive="active"><a class="dropdown-item" routerLink="/sample/display" class="nav-link">Display</a></li>
+                        <li class="nav-item" routerLinkActive="active"><a class="dropdown-item" routerLink="/sample/edit" class="nav-link">Edit</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
